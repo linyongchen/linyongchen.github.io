@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="luyou">
+<head>
+	<meta charset="UTF-8">
+	<title>路由</title>
+</head>
+<body>
+	<div>呵呵呵</div>
+	<ng-view></ng-view>
+	<div>哈哈哈</div>
+</body>
+<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+<script src = "angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	
+var app = angular.module("luyou",["ngRoute"]);
+app.config(function($routeProvider){
+	$routeProvider.when("/aaa",{templateUrl:"templateA.html"});
+	$routeProvider.when("/bbb",{templateUrl:"templateB.html"});
+	$routeProvider.when("/ccc",{templateUrl:"templateC.html"});
+	$routeProvider.when("/ddd",{templateUrl:"templateD.html"});
+	$routeProvider.otherwise({templateUrl:"templateE.html"});
+})
+
+
+</script>
+</html>

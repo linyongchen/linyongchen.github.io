@@ -1,4 +1,7 @@
 *{margin: 0;padding: 0;list-style: none;}
 .col-md-4{
+	text-align: center;
 	color: #5bc0de;
+	border: 1px solid salmon;
+	
 }

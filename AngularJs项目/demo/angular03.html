@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="test">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<dota-go>
+			<span>哈哈哈哈</span>
+		</dota-go>
+		<div dota-go></div>
+		<div class="dota-go"></div>
+		<!--directive:dota-go -->
+		
+	</body>
+	<script src="../js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = angular.module("test",[]);
+		
+		//自定义指令
+		//angular给我们提供了很多内置指令,比如ngBind,ngApp,ngController等等.但是系统提供的指令远远不够我们开发使用.这个时候就需要我们通过语法来自定义一些指令.
+		//自定义指令用的好的话,可以让程序看起来更加简洁.可读性更高
+		app.directive("dotaGo",function () {
+			return{
+//				template:"<ul><span ng-transclude></span><li>影魔</li><li>敌法</li><li>幽鬼</li></ul>",
+				restrict:"CAEM",//restrict是限制的意思,用于规定哪种指令形式允许使用.E代表标签,A代表属性,C代表class,M代表注释,写几个支持几个
+				replace:true,//如果为true,让注释可以执行指令
+				transclude:true, //是否显示标签内的原有内容,如果true 表示标签内的内容显示出来,如果false,忽略标签内的内容
+				
+				templateUrl:"aa.html"
+				//这是在服务器环境下,引入对应的
+			}
+		})
+		//指令定义好之后,就需要在你的代码里面使用这些指令了
+		//使用自定义指令的方式有四种:
+		//1,标签形式
+		//2.属性
+		//3.class
+		//4,注释
+		//系统默认支持标签E和属性A,其他的默认不支持,需要我们人为开启.
+		
+		
+	</script>
+</html>
